@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Service</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="greeting">{{ greeting }}</div>
+        
+        <form method="GET">
+            <div class="form-group">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" value="{{ current_name }}" placeholder="Введите имя">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Сообщение:</label>
+                <input type="text" id="message" name="message" value="{{ current_message }}" placeholder="Введите сообщение">
+            </div>
+            
+            <button type="submit">Обновить сообщение</button>
+        </form>
+        
+        <div class="url-hint">
+            <p><strong>Альтернативный способ:</strong></p>
+            <p>Измените параметры прямо в адресной строке браузера:</p>
+            <p><strong>/?name=ВАШЕ_ИМЯ&message=ВАШЕ_СООБЩЕНИЕ</strong></p>
+        </div>
+    </div>
+</body>
+</html>
